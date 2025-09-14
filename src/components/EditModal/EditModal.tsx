@@ -10,12 +10,12 @@ import {
   FormControl,
   Input,
 } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface EditModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (content: string) => void;//提交数据给父组件
+  onSubmit: (content: string) => void; //提交数据给父组件
   initialContent: string;
 }
 
@@ -26,11 +26,6 @@ function EditModal({
   initialContent,
 }: EditModalProps) {
   const [content, setContent] = useState(initialContent);
-
-  // 当 initialContent 改变时更新内部状态
-  useEffect(() => {
-    setContent(initialContent);
-  }, [initialContent]);
 
   const handleSubmit = () => {
     if (content.trim() === "") return;
@@ -49,7 +44,7 @@ function EditModal({
             <Input
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              placeholder="请输入新的任务内容"//modal输入框的占位符，是默认值
+              placeholder="请输入新的任务内容" //modal输入框的占位符，是默认值
             />
           </FormControl>
         </ModalBody>
