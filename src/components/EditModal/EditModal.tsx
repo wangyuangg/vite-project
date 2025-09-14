@@ -49,7 +49,7 @@ function EditModal({
             <Input
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              placeholder="请输入新的任务内容"
+              placeholder="请输入新的任务内容"//modal输入框的占位符，是默认值
             />
           </FormControl>
         </ModalBody>

@@ -25,8 +25,8 @@ function TodoList() {
   } | null>(null);
   // 点击任务或编辑按钮时调用
   const handleTodoClick = (id: Date, content: string) => {
-    setEditingTodo({ id, content });
-    onOpen();
+    setEditingTodo({ id, content }); //设置当前编辑的任务的id和内容
+    onOpen(); //同时设置模态框打开
   };
   const handleSubmit = (newContent: string) => {
     if (editingTodo) {
@@ -101,7 +101,7 @@ function TodoList() {
 
       {/* 编辑模态框 */}
       {editingTodo && (
-        <EditModal
+        <EditModal//当editingTodo渲染EditModal组件
           isOpen={isOpen}
           onClose={onClose}
           onSubmit={handleSubmit}
